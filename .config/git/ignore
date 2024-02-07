@@ -1,3 +1,5 @@
 **/.envrc
 .jj/
+.DS_Store
+**/.DS_Store
 
