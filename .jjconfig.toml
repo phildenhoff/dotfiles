@@ -1,0 +1,15 @@
+merge-tools.TOOL.edit-args = ["$left", "$right", "$output"]
+snapshot.max-new-file-size = "10M"
+
+[user]
+name = "Phil Denhoff"
+email = "phil@denhoff.ca"
+
+[ui]
+diff-editor = ["scm-diff-editor", "--dir-diff", "$left", "$right"]
+#diff.tool = "difft"
+editor = "hx"
+#pager = "delta"
+pager = ["sh", "-c", "delta | less -RFX"]
+
+
