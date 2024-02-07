@@ -1,4 +1,4 @@
-""~rbar/ Hybrid numbering with relative numbers around absolute number on current line
+" Hybrid numbering with relative numbers around absolute number on current line
 set number relativenumber
 let mapleader = " "
 
