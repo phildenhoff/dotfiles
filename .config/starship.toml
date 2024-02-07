@@ -1,0 +1,10 @@
+# Starship config file
+format = "$all${custom.iterm2}"
+
+[swift]
+disabled=true
+
+[custom.iterm2]
+command = "iterm2_prompt_mark"
+when = false
+
