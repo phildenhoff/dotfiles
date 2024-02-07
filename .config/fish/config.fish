@@ -59,13 +59,17 @@ if status is-interactive
     set --export RUSTUP_HOME $XDG_DATA_HOME/rustup
     ## Rust
     fish_add_path -m /Users/phil/.local/share/cargo/bin
-        
+            
     # Trying to get nnn to display images (catimg alias)
     fish_add_path -m ~/.local/bin
     fish_add_path -m ~/.iterm2
 
     # jj is a Git-compatible DVCS
     jj util completion --fish | source
+
+    # 1Password SSH auth socket so that libssh2 programs (like jj) can use
+    # 1P for SSH auth
+    set --export SSH_AUTH_SOCK "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
     # Cargo
     fish_add_path $XDG_DATA_HOME/cargo/bin
