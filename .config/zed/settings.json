@@ -10,12 +10,24 @@
   "features": {
     "copilot": true
   },
+  "terminal": {
+    "font_family": "IosevkaTerm Nerd Font",
+  },
   "theme": "Atelier Plateau Light",
+  "wrap_guides": [
+    80
+  ],
+  "preferred_line_length": 80,
+  "languages": {
+    "Markdown": {
+      "soft_wrap": "none",
+    }
+  },
   "vim_mode": true,
   "buffer_font_size": 15,
   "experiments": {
     "experimental_themes": true
   },
   "tab_size": 2,
-  "relative_line_numbers": true
+  "relative_line_numbers": true,
 }
