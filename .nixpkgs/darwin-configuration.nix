@@ -2,6 +2,8 @@
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   workPackages = with pkgs; [
+    docker
+    colima
   ];
   personalPackages = with pkgs; [
     # Utilities
