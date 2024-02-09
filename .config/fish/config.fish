@@ -65,7 +65,7 @@ if status is-interactive
     fish_add_path -m ~/.iterm2
 
     # jj is a Git-compatible DVCS
-    jj util completion --fish | source
+    jj util completion fish | source
 
     # 1Password SSH auth socket so that libssh2 programs (like jj) can use
     # 1P for SSH auth
