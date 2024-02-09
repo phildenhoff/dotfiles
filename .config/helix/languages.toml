@@ -1,7 +1,3 @@
-# [[language-server.marksman]]
-# command = "marksman"
-# args = ["server"]
-
 # [[language-server.deno]]
 # command = "deno"
 # args = ["lsp"]
@@ -17,6 +13,38 @@ indent = { tab-width = 2, unit = "  " }
 language-servers = [
   { name = "marksman"},
 ]
+
+[language-server]
+biome = { command = "biome", args = ["lsp-proxy"] }
+svelte = { command = "svelteserver" }
+
+[[language]]
+name = "javascript"
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+auto-format = true
+
+[[language]]
+name = "typescript"
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+auto-format = true
+
+[[language]]
+name = "tsx"
+auto-format = true
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+
+[[language]]
+name = "jsx"
+auto-format = true
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+
+[[language]]
+name = "json"
+language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome" ]
+
+[[language]]
+name = "svelte"
+language-servers = [ { name = "svelte" } ]
 
 # [[language]]
 # name = "javascript"
