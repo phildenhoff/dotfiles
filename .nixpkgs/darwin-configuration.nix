@@ -40,6 +40,7 @@ let
     nnn
     podman
     restic
+    rustic-rs
     sptlrx
     sqldiff
     starship
