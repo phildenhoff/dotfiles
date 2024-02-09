@@ -1,8 +1,8 @@
 [user]
     email = phil@denhoff.ca
     name = Phil Denhoff
-[url "ssh://git@github.com/"]
-    insteadOf = https://github.com/
+#[url "ssh://git@github.com/"]
+#    insteadOf = https://github.com/
 [core]
     editor = hx
     pager = delta
