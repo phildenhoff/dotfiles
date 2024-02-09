@@ -82,6 +82,9 @@ in {
     finder.FXPreferredViewStyle = "icnv";
     loginwindow.LoginwindowText = "phil@denhoff.ca | 250 327 7468";
     menuExtraClock.Show24Hour = true;
+    NSGlobalDomain = {
+      ApplePressAndHoldEnabled = false;
+    };
   };
 
   documentation.enable = false;
