@@ -1,0 +1,35 @@
+[repository]
+repository = "rclone:backup-on-ginfizz:/mnt/user/device-backups/carafe-rustic"
+password = ""
+
+[forget]
+keep-daily = 8
+keep-weekly = 5
+keep-monthly = 13
+keep-yearly = 10
+
+[backup]
+exclude-if-present = [ "node_modules" ]
+
+# begin-region Code repos
+
+[[backup.sources]]
+source = "/Users/phil/dev"
+git-ignore = true
+
+[[backup.sources]]
+source = "/Users/phil/work"
+git-ignore = true
+
+[[backup.sources]]
+source = "/Users/phil/.config"
+git-ignore = true
+
+# end-region
+
+[[backup.sources]]
+source = "/Users/phil/Documents"
+[[backup.sources]]
+source = "/Users/phil/Desktop"
+[[backup.sources]]
+source = "/Users/phil/Movies"
