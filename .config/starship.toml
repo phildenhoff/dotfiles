@@ -5,6 +5,6 @@ format = "$all${custom.iterm2}"
 disabled=true
 
 [custom.iterm2]
-command = "iterm2_prompt_mark"
+command = 'printf "\033]133;A\007"'
 when = false
 
