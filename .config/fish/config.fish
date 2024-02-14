@@ -65,7 +65,19 @@ if status is-interactive
     fish_add_path -m ~/.iterm2
 
     # jj is a Git-compatible DVCS
+    # Add branch suggestion to `jj branch set` and `jj git push -b`
+    complete -c jj -n "__fish_seen_subcommand_from branch; and __fish_seen_subcommand_from set" -f -a "(git branch --format='%(refname:short)')"
+    function jgp
+        jj git push -b $argv
+    end
+    function __fish_jgp_branches
+        # This function will simply list git branches, formatted for completion
+        git branch --format='%(refname:short)'
+    end
+    complete --command jgp -A --no-files --condition '__fish_use_subcommand' --arguments '(__fish_jgp_branches)' -d 'Branch name'
+
     jj util completion fish | source
+
 
     # 1Password SSH auth socket so that libssh2 programs (like jj) can use
     # 1P for SSH auth
