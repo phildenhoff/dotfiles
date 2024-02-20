@@ -73,6 +73,9 @@ if status is-interactive
 
     # Cargo
     fish_add_path $XDG_DATA_HOME/cargo/bin
+
+    # Add atuin for shared command histories
+    atuin init fish --disable-up-arrow | source
 end
 
 

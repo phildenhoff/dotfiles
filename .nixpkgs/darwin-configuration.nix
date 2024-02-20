@@ -17,6 +17,7 @@ let
     ripgrep
     sd
     # Tools
+    atuin
     bottom
     bun
     chezmoi
