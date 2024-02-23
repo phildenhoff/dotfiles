@@ -18,6 +18,7 @@ let
     jq
     ripgrep
     sd
+    zoxide
     # Tools
     atuin
     bottom

@@ -88,6 +88,9 @@ if status is-interactive
 
     # Add atuin for shared command histories
     atuin init fish --disable-up-arrow | source
+
+    # Add zoxide, a better cd
+    zoxide init fish | source
 end
 
 
