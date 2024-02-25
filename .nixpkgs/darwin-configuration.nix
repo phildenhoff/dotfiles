@@ -2,8 +2,9 @@
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   workPackages = with pkgs; [
-    docker
     colima
+    docker
+    postgresql
   ];
   personalPackages = with pkgs; [
     # Utilities
