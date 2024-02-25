@@ -3,6 +3,8 @@
     name = Phil Denhoff
 #[url "ssh://git@github.com/"]
 #    insteadOf = https://github.com/
+[includeIf "gitdir:/Users/phil/work/**"]
+    path = work.gitconfig
 [core]
     editor = hx
     pager = delta
