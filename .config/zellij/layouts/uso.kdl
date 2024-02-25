@@ -1,0 +1,30 @@
+layout {
+    pane split_direction="vertical" {
+        pane {
+            command "fish"
+            args "--login" "--interactive" "--command" "direnv exec . docker compose up" 
+            name "Database"
+            cwd "~/work/usoex"
+        }
+        pane {
+            command "fish"
+            args "--login" "--interactive" "--command" "direnv exec . mix phx.server" 
+            name "Elixir"
+            cwd "~/work/usoex"
+        }
+    }
+    pane split_direction="vertical" {
+        pane {
+            command "fish"
+            args "--login" "--interactive" "--command" "direnv exec . yarn serve" 
+            name "Javascript"
+            cwd "~/work/usojs"
+        }
+        pane {
+            command "fish"
+            args "--login" "--interactive" "--command" "yarn dev --tunnel-url https://phil-uso-ap.ngrok.io:39351 --theme 141993935106" 
+            name "App extension"
+            cwd "~/work/usojs/app-extensions"
+        }
+    }
+}
