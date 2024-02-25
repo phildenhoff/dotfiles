@@ -12,6 +12,7 @@ editor = "hx"
 #pager = "delta"
 pager = ["sh", "-c", "delta | less -RFX"]
 default-command = "log"
+diff-editor = ":builtin"
 
 [revset-aliases]
 'mine' = 'main@origin..author(phil)'
