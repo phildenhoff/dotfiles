@@ -13,7 +13,7 @@
   "terminal": {
     "font_family": "IosevkaTerm Nerd Font"
   },
-  "theme": "Solarized Dark",
+  "theme": "Catppuccin Latte",
   "wrap_guides": [80],
   "preferred_line_length": 80,
   "languages": {
