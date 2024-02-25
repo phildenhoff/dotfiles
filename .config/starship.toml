@@ -1,10 +1,15 @@
 # Starship config file
-format = "$all${custom.iterm2}"
+format = "$all"
 
 [swift]
 disabled=true
 
-[custom.iterm2]
-command = 'printf "\033]133;A\007"'
-when = false
+[custom.jj]
+description = "Show the current jj revision"
+command = 'jj log -T "change_id.shortest()" -r "@" --no-graph --ignore-working-copy'
+#detect_folders = [".jj"]
+when = 'jj root | grep -q "^/"'
+symbol = "◉ "
+style = 'bold purple'
+format = 'on [$symbol$output]($style) '
 
