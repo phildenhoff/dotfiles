@@ -13,4 +13,5 @@ editor = "hx"
 pager = ["sh", "-c", "delta | less -RFX"]
 default-command = "log"
 
-
+[revset-aliases]
+'mine' = 'main@origin..author(phil)'
