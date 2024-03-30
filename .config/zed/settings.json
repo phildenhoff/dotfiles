@@ -8,10 +8,17 @@
 // from the command palette or from `Zed` application menu.
 {
   "features": {
-    "copilot": true
+    "copilot": false
   },
+  "format_on_save": "off",
+  "code_actions_on_format": {
+    "source.fixAll": true,
+    "source.organizeImports.biome": true
+  },
+  "formatter": "language_server",
+  "buffer_font_family": "FiraCode Nerd Font",
   "terminal": {
-    "font_family": "IosevkaTerm Nerd Font"
+    "font_family": "FiraCode Nerd Font"
   },
   "theme": "Catppuccin Latte",
   "wrap_guides": [80],
