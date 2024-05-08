@@ -1,34 +1,44 @@
 keybinds {
+    unbind "Ctrl o"
     normal {
+        bind "Ctrl l" { SwitchToMode "session"; }
     }
     locked {
     }
     pane {
         bind "Ctrl p" "Enter" "Space" "Esc" { SwitchToMode "normal"; }
+        bind "Ctrl l" { SwitchToMode "session"; }
     }
     tab {
         bind "Ctrl t" "Enter" "Space" "Esc" { SwitchToMode "normal"; }
+        bind "Ctrl l" { SwitchToMode "session"; }
     }
     resize {
         bind "Ctrl n" "Enter" "Space" "Esc" { SwitchToMode "normal"; }
+        bind "Ctrl l" { SwitchToMode "session"; }
     }
     move {
         bind "Ctrl h" "Enter" "Space" "Esc" { SwitchToMode "normal"; }
+        bind "Ctrl l" { SwitchToMode "session"; }
     }
     scroll {
         bind "Ctrl s" "Space" "Enter" "Esc" { SwitchToMode "normal"; }
+        bind "Ctrl l" { SwitchToMode "session"; }
     }
     session {
-        bind "Ctrl o" "Enter" "Space" "Esc" { SwitchToMode "normal"; }
+        bind "Ctrl l" "Enter" "Space" "Esc" { SwitchToMode "normal"; }
     }
     RenameTab {
         bind "Enter" "Ctrl c" "Esc" { SwitchToMode "normal"; }
+        bind "Ctrl l" { SwitchToMode "session"; }
     }
     RenamePane {
         bind "Enter" "Ctrl c" "Esc" { SwitchToMode "normal"; }
+        bind "Ctrl l" { SwitchToMode "session"; }
     }
     tmux {
         bind "Ctrl o" "Enter" "Space" "Esc" { SwitchToMode "normal"; }
+        bind "Ctrl l" { SwitchToMode "session"; }
     }
 }
 
