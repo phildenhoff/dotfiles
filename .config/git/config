@@ -9,6 +9,8 @@
     editor = hx
     pager = delta
     excludesFile = ~/.gitignore
+[push]
+    autoSetupRemote = true
 [init]
     defaultBranch = main
 [interactive]
