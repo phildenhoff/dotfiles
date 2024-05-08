@@ -1,5 +1,4 @@
 import = [
-  # uncomment the flavour you want below:
   "~/.config/alacritty/catppuccin-latte.toml"
   # "~/.config/alacritty/catppuccin-frappe.toml"
   # "~/.config/alacritty/catppuccin-macchiato.toml"
@@ -16,3 +15,7 @@ bold = { family = "IosevkaTerm Nerd Font Mono", style = "SemiBold" }
 bold_italic = { family = "IosevkaTerm Nerd Font Mono", style = "SemiBold Oblique" }
 size = 14
 
+[keyboard]
+bindings = [
+  { key= "Back", mods= "Command", chars= "\u0017" }
+]
