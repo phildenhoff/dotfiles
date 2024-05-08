@@ -2,6 +2,7 @@
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   workPackages = with pkgs; [
+    alacritty
     colima
     docker
     postgresql
