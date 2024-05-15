@@ -26,7 +26,6 @@ let
     delta
     unstable.deno
     difftastic
-    doppler
     du-dust
     eternal-terminal
     eza
