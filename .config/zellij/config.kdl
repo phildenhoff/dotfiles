@@ -1,5 +1,7 @@
 keybinds {
     unbind "Ctrl o"
+    unbind "Alt Left"
+    unbind "Alt Right"
     normal {
         bind "Ctrl l" { SwitchToMode "session"; }
     }
