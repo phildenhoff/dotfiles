@@ -51,6 +51,7 @@ let
     tealdeer
     tmux
     topgrade
+    wezterm
     zellij
     # Editors & plugins
     kak-lsp
