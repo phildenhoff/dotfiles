@@ -71,7 +71,6 @@ call plug#begin()
   " File managers
   " Plug 'vifm/vifm.vim'
   Plug 'luukvbaal/nnn.nvim'
-  Plug 'stevearc/oil.nvim'
   " Focus
   Plug 'junegunn/goyo.vim'
   " Autocomplete
@@ -85,9 +84,8 @@ call plug#begin()
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'rmagatti/session-lens'
   " IDE features
-  Plug 'sidebar-nvim/sidebar.nvim'
   Plug 'kyazdani42/nvim-web-devicons'
-  " Plug 'kyazdani42/nvim-tree.lua' " Disabled as Sidebar has more features
+  Plug 'tris203/precognition.nvim'
   " Utilities
   Plug 'nvim-lua/plenary.nvim'
   Plug 'rmagatti/auto-session'
@@ -103,8 +101,10 @@ call plug#begin()
   Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
   " Status line
   Plug 'beauwilliams/statusline.lua'
-  " Plug 'itchyny/ightline.vim'
-  " Plug 'feline-nvim/feline.nvim' " Disabled as I don't want to config colors
+
+  " Dependency of hardtime
+  Plug 'MunifTanjim/nui.nvim'
+  Plug 'm4xshen/hardtime.nvim'
   " LSPs & Languages
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/nvim-treesitter-context'
@@ -406,10 +406,10 @@ require('nightfox').setup({
 current_hour = tonumber(os.date("%H"))
 if current_hour >= 7 and current_hour < 17 then
   vim.cmd('colorscheme catppuccin-latte')
-  vim.g.lightline = { colorscheme = "dayfox" }
+  vim.g.lightline = { colorscheme = "catppuccin-latte" }
 else
-  vim.cmd('colorscheme catppuccin-frappe')
-  vim.g.lightline = { colorscheme = "nightfox" }
+  vim.cmd('colorscheme catppuccin-mocha')
+  vim.g.lightline = { colorscheme = "catppuccin-mocha" }
 end
 
 -- Update statusline
@@ -458,41 +458,9 @@ end
 EOF
 
 lua << EOF
--- Sidebar (disabled while using Nvim-Tree)
-local sidebar = require("sidebar-nvim")
-sidebar.setup({
-  open = false,
-  sections = { "datetime", "git", "diagnostics", "buffers", "todos", "files"},
-  disable_closing_prompt = true,
-  files = {
-    show_hidden = true,
-  },
-})
-
--- Oil (testing as an alternative to Sidebar)
-require("oil").setup()
-
--- Nvim-Tree (Disabled as I prefer Sidebar)
---[[
-require("nvim-tree").setup({
-  sort_by = "case_sensitive",
-  view = {
-    adaptive_size = true,
-    mappings = {
-      list = {
-        { key = "u", action = "dir_up" },
-      },
-    },
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
-})
-]]--
-
+-- Recommended... by someone, to learn how Vim works.
+require("precognition").show()
+require("hardtime").setup()
 
 -- Auto-session setup
 require('auto-session').setup {
@@ -537,9 +505,9 @@ nnoremap <leader>nve <cmd>tabnew ~/.config/nvim/init.vim<CR>
 " or :so %
 nnoremap <leader>nvs <cmd>source ~/.config/nvim/init.vim<CR>
 
-nnoremap <leader>td <cmd>colorscheme dayfox<cr>
+nnoremap <leader>td <cmd>colorscheme catppuccin-latte<cr>
 nnoremap <leader>tu <cmd>colorscheme duskfox<cr>
-nnoremap <leader>tn <cmd>colorscheme nightfox<cr>
+nnoremap <leader>tn <cmd>colorscheme catppuccin-mocha<cr>
 
 nnoremap <leader>tgd <cmd>colorscheme github_light<cr>
 nnoremap <leader>tgn <cmd>colorscheme github_dark<cr>
