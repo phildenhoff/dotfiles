@@ -2,7 +2,7 @@
 {
   imports = [
     /Users/phil/.config/_dotfiles/nix/shared_packages.nix
-  ]
+  ];
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
