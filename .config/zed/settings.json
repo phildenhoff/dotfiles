@@ -22,11 +22,11 @@
   "assistant": {
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-sonnet-20240229"
     },
     "version": "2"
   },
-  "buffer_font_size": 12,
+  "buffer_font_size": 14,
   "features": {
     "inline_completion_provider": "supermaven",
     "copilot": false
@@ -65,6 +65,9 @@
   "tab_size": 2,
   "theme": "Catppuccin Latte",
   "vim_mode": true,
+  "vim": {
+    "use_system_clipboard":"never"
+  },
   "wrap_guides": [
     80
   ]
