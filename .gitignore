@@ -4,3 +4,6 @@
 .zed/
 .idea/
 .vscode/
+
+.config/zed/conversations
+.config/zed/prompts
