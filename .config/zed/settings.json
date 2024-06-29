@@ -7,8 +7,18 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "buffer_font_family": "FiraCode Nerd Font",
-  "buffer_font_size": 14,
+  "buffer_font_size": 12,
+  "assistant": {
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "features": {
+    "inline_completion_provider": "supermaven",
+    "copilot": false
+  },
   "code_actions_on_format": {
     "source.fixAll": true,
     "source.organizeImports.biome": true
@@ -23,10 +33,15 @@
       "enabled": true
     }
   },
+  "inline_completions": {
+    "disabled_globs": [
+      ".env"
+    ]
+  },
   "languages": {
     "Markdown": {
       "soft_wrap": "none"
-    },
+    }
   },
   "show_whitespaces": "all",
   "preferred_line_length": 80,
