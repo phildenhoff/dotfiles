@@ -4,6 +4,10 @@
     /Users/phil/.config/_dotfiles/nix/shared_packages.nix
   ];
 
+  #environment.systemPackages = with pkgs; [
+    #zulu # OpenJDK 21 for Minecraft 1.20
+  #];
+ 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
   # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";

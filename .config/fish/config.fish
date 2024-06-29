@@ -100,14 +100,16 @@ if status is-interactive
 end
 
 
-# pnpm
 if string match -q -- $hostname carafe
+    # pnpm
     set -gx PNPM_HOME /Users/phil/Library/pnpm
     if not string match -q -- $PNPM_HOME $PATH
         set -gx PATH "$PNPM_HOME" $PATH
     end
     # pnpm end
-    fish_add_path /Users/phil/.spicetify
+
+    # Dec 28, 2024 This is a hack and I'm sorry about it
+    fish_add_path /nix/store/msgwpjsr2607nmlm4f0klc60m7vyp2ls-git-2.46.0/bin/
 end
 
 if string match -q -- $hostname knife

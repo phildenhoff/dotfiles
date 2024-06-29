@@ -75,17 +75,19 @@ alias grbi="git rebase -i"
 alias grbc="git rebase --continue"
 
 function gpsup
-  git push --set-upstream origin $(git symbolic-ref --short HEAD)
+    git push --set-upstream origin $(git symbolic-ref --short HEAD)
 end
 
 function glpb
-  local upstream
-  set upstream_with_color_codes "$(gt b info | rg "Parent" | cut -d " " -f 2 | tr -d '\r')"
-  # this SED is macOS specific
-  set upstream "$(echo $upstream_with_color_codes | sed -e \$'s/\x1b\[[0-9;]*m//g')"
-  git --no-pager log --oneline "$upstream..HEAD"
+    local upstream
+    set upstream_with_color_codes "$(gt b info | rg "Parent" | cut -d " " -f 2 | tr -d '\r')"
+    # this SED is macOS specific
+    set upstream "$(echo $upstream_with_color_codes | sed -e \$'s/\x1b\[[0-9;]*m//g')"
+    git --no-pager log --oneline "$upstream..HEAD"
 end
 
 alias pnx="pnpm nx"
 
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
+alias watch="viddy"

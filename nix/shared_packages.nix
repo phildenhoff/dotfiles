@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  nixpkgsdarwin = import <nixpkgs-24.05-darwin> {};
   workPackages = with pkgs; [
     alacritty
     colima
@@ -15,21 +16,31 @@ let
     fd
     fnm
     fzf
+    git
+    git-lfs
+    gnupg
     jq
     ripgrep
     sd
+    unzip
+    zip
+    zlib # Dec 30, 2024 Moved from Brew, no idea if I need it
     zoxide
     # Tools
-    atuin
+    # _1password-cli # Dec 30, 2024 Moved from Brew, but disabled today since I can't find the pkg rn
+    nixpkgsdarwin.atuin
     bottom
     bun
     chezmoi
+    curl
     delta
+    dua
     unstable.deno
     difftastic
     du-dust
     eternal-terminal
     eza
+    ffmpeg
     fish
     gh
     htop
@@ -51,13 +62,22 @@ let
     tealdeer
     tmux
     topgrade
+    uv # Python version & dependency mgmt tool
+    watchman
     wezterm
-    zellij
+    wget
+    viddy # Replaces `watch`, with auto-recorded history
+    yt-dlp # Replaced youtube-dl, to download vids from YouTube
+    zellij # Terminal Multiplexer. Replaces `screen` and `tmux`.
     # Editors & plugins
+    efm-langserver # Dec 30, 2024 Moved from Brew, although I'm not sure what it's for
     kak-lsp
     kakoune
     neovim
     unstable.helix
+    # Gaming
+    # zulu11 # OpenJDK 11, which cannot be installed because it conflicts with the Modern JDK install
+    zulu # Latest OpenJDK
   ];
   educationPkgs = with pkgs; [
     # Gleam
@@ -66,8 +86,15 @@ let
     gleam
     rebar3
   ];
+  testingPkgs = with pkgs; [
+    sapling
+  ];
+  uiPkgs = with pkgs; [
+    alt-tab-macos
+    meld
+  ];
 in {
-  environment.systemPackages = with pkgs; [] ++ workPackages ++ personalPackages ++ educationPkgs;
+  environment.systemPackages = with pkgs; [] ++ workPackages ++ personalPackages ++ educationPkgs ++ testingPkgs ++ uiPkgs;
 
   programs.fish.enable = true;
 }
