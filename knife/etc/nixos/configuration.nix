@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      /home/phil/.config/_dotfiles/nix/shared_packages.nix
     ];
 
   # Bootloader.
