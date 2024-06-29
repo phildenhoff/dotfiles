@@ -2,21 +2,27 @@ set --export NNN_PLUG 'p:pd-preview'
 
 # Commands to run in interactive sessions can go in here
 if status is-interactive
-    env SHELL=fish /opt/homebrew/bin/brew shellenv | source
+    if string match -q -- $hostname carafe
+        env SHELL=fish /opt/homebrew/bin/brew shellenv | source
+    end
 
     # ENVVAR stuff
     set --export EDITOR hx
     set --export FZF_DEFAULT_COMMAND 'fd --type file --strip-cwd-prefix'
     set --export FZF_CTRL_T_COMMAND 'fd --follow --exclude .git --exclude node_modules'
 
-    set --export XDG_CACHE_HOME '/Users/phil/.cache'
-    set --export XDG_DATA_HOME '/Users/phil/.local/share'
-    set --export XDG_CONFIG_HOME '/Users/phil/.config'
-    set --export XDG_STATE_HOME '/Users/phil/.local/state'
-    set --export XDG_RUNTIME_DIR $TMPDIR
+    if string match -q -- $hostname carafe
+        set --export XDG_CACHE_HOME '/Users/phil/.cache'
+        set --export XDG_DATA_HOME '/Users/phil/.local/share'
+        set --export XDG_CONFIG_HOME '/Users/phil/.config'
+        set --export XDG_STATE_HOME '/Users/phil/.local/state'
+        set --export XDG_RUNTIME_DIR $TMPDIR
+    end
 
-    # iTerm2
-    source ~/.iterm2_shell_integration.fish
+    if string match -q -- $hostname carafe
+        # iTerm2
+        source ~/.iterm2_shell_integration.fish
+    end
 
     # Add Starship prompt
     starship init fish | source
@@ -58,8 +64,8 @@ if status is-interactive
     ## Rustup
     set --export RUSTUP_HOME $XDG_DATA_HOME/rustup
     ## Rust
-    fish_add_path -m /Users/phil/.local/share/cargo/bin
-            
+    fish_add_path -m $XDG_DATA_HOME/.local/share/cargo/bin
+
     # Trying to get nnn to display images (catimg alias)
     fish_add_path -m ~/.local/bin
     fish_add_path -m ~/.iterm2
@@ -74,7 +80,7 @@ if status is-interactive
         # This function will simply list git branches, formatted for completion
         git branch --format='%(refname:short)'
     end
-    complete --command jgp -A --no-files --condition '__fish_use_subcommand' --arguments '(__fish_jgp_branches)' -d 'Branch name'
+    complete --command jgp -A --no-files --condition __fish_use_subcommand --arguments '(__fish_jgp_branches)' -d 'Branch name'
 
     jj util completion fish | source
 
@@ -95,10 +101,11 @@ end
 
 
 # pnpm
-set -gx PNPM_HOME "/Users/phil/Library/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+if string match -q -- $hostname carafe
+    set -gx PNPM_HOME /Users/phil/Library/pnpm
+    if not string match -q -- $PNPM_HOME $PATH
+        set -gx PATH "$PNPM_HOME" $PATH
+    end
+    # pnpm end
+    fish_add_path /Users/phil/.spicetify
 end
-# pnpm end
-fish_add_path /Users/phil/.spicetify
-
