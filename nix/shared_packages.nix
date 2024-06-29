@@ -22,6 +22,7 @@ let
     jq
     ripgrep
     sd
+    tokei
     unzip
     zip
     zlib # Dec 30, 2024 Moved from Brew, no idea if I need it
