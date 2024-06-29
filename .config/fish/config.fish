@@ -109,3 +109,11 @@ if string match -q -- $hostname carafe
     # pnpm end
     fish_add_path /Users/phil/.spicetify
 end
+
+if string match -q -- $hostname knife
+    if status is-login
+        if test -z "$WAYLAND_DISPLAY"; and test "$XDG_VTNR" -eq 1
+            dbus-run-session Hyprland
+        end
+    end
+end
