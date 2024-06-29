@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  nixpkgsdarwin = import <nixpkgs-24.05-darwin> {};
+  unstable = import <nixpkgs> { config = { allowUnfree = true; }; };
+  nixpkgsdarwin = import <nixpkgs-24.11-darwin> {};
   workPackages = with pkgs; [
     alacritty
     colima
@@ -10,6 +10,7 @@ let
   ];
   personalPackages = with pkgs; [
     # Utilities
+    aerospace
     bat
     dogdns
     entr
@@ -28,7 +29,7 @@ let
     zlib # Dec 30, 2024 Moved from Brew, no idea if I need it
     zoxide
     # Tools
-    _1password # Dec 30, 2024 Moved from Brew
+    _1password-cli # Dec 30, 2024 Moved from Brew
     atuin
     bottom
     bun

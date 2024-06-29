@@ -4,16 +4,10 @@
     /Users/phil/.config/_dotfiles/nix/shared_packages.nix
   ];
 
-  #environment.systemPackages = with pkgs; [
-    #zulu # OpenJDK 21 for Minecraft 1.20
-  #];
- 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
   # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
 
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
 
   programs.fish.enable = true;
@@ -29,10 +23,16 @@
       ApplePressAndHoldEnabled = false;
     };
   };
+  ids.gids.nixbld = 350;
+  networking.hosts = {
+    "192.168.2.1" = [ "unifi.local" "paradise.local" ];
+    "40.233.86.119" = [ "opc.internal.denhoff.ca" ];
+  };
 
   documentation.enable = false;
   documentation.doc.enable = false;
   documentation.man.enable = false;
 
-  security.pam.enableSudoTouchIdAuth = true;
+  # security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 }
