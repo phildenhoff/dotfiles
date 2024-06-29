@@ -28,7 +28,7 @@ let
     zoxide
     # Tools
     _1password # Dec 30, 2024 Moved from Brew
-    nixpkgsdarwin.atuin
+    atuin
     bottom
     bun
     chezmoi
@@ -67,6 +67,7 @@ let
     wezterm
     wget
     viddy # Replaces `watch`, with auto-recorded history
+    xh
     yt-dlp # Replaced youtube-dl, to download vids from YouTube
     zellij # Terminal Multiplexer. Replaces `screen` and `tmux`.
     # Editors & plugins
