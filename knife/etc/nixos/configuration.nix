@@ -52,6 +52,7 @@
     isNormalUser = true;
     description = "Phil Denhoff";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish;
     packages = with pkgs; [
       git
       swww
@@ -91,10 +92,7 @@
     gnome.nautilus
     hyprland
     neovim
-    helix
     mako
-    wezterm
-    zellij
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
