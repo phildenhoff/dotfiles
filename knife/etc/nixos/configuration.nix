@@ -23,11 +23,10 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
+  services.xserver.enable = true;
   # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = false;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   #services.xserver = {
@@ -73,12 +72,17 @@
 
   # services.xserver.displayManager.gdm.wayland = true;
   programs.hyprland = {
-    enable = true;
+    enable = false;
     # xwayland.enable = true;
   };
 
   # Enable automatic login for the user.
   services.getty.autologinUser = "phil";
+  # Gnome workaround
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "phil";
+
+  
 
   # Install firefox.
   programs.firefox.enable = true;
