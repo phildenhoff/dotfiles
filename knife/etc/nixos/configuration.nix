@@ -56,7 +56,6 @@
       git
       swww
       wmctrl
-      rofi-wayland
     ];
     openssh = {
       authorizedKeys.keys = [
