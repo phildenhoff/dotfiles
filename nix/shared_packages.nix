@@ -5,7 +5,7 @@ let
     alacritty
     colima
     docker
-    postgresql
+    postgresql_16
   ];
   personalPackages = with pkgs; [
     # Utilities
