@@ -18,7 +18,7 @@ layout {
             command "fish"
             args "--login" "--interactive" "--command" "direnv exec . yarn serve" 
             name "Javascript"
-            cwd "~/work/wholesale-club"
+            cwd "~/work/ts-wholesale"
         }
     }
 }
