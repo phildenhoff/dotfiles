@@ -161,3 +161,8 @@ alt-esc = ['mode main']
 if.app-id = 'io.rize'
 check-further-callbacks = true
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
+check-further-callbacks = true
+run = 'layout floating'
