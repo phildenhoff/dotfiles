@@ -74,7 +74,7 @@ if status is-interactive
     # Add branch suggestion to `jj branch set` and `jj git push -b`
     complete -c jj -n "__fish_seen_subcommand_from branch; and __fish_seen_subcommand_from set" -f -a "(git branch --format='%(refname:short)')"
     function jgp
-        jj git push -b $argv
+        jj git push -b $argv --allow-new
     end
     function __fish_jgp_branches
         # This function will simply list git branches, formatted for completion
