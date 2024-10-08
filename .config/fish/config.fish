@@ -2,7 +2,7 @@ set --export NNN_PLUG 'p:pd-preview'
 
 # Commands to run in interactive sessions can go in here
 if status is-interactive
-    if string match -q -- $hostname carafe
+    if string match -q -- $hostname carafe whisk
         env SHELL=fish /opt/homebrew/bin/brew shellenv | source
     end
 
@@ -11,7 +11,7 @@ if status is-interactive
     set --export FZF_DEFAULT_COMMAND 'fd --type file --strip-cwd-prefix'
     set --export FZF_CTRL_T_COMMAND 'fd --follow --exclude .git --exclude node_modules'
 
-    if string match -q -- $hostname carafe
+    if string match -q -- $hostname carafe whisk
         set --export XDG_CACHE_HOME '/Users/phil/.cache'
         set --export XDG_DATA_HOME '/Users/phil/.local/share'
         set --export XDG_CONFIG_HOME '/Users/phil/.config'
@@ -19,7 +19,7 @@ if status is-interactive
         set --export XDG_RUNTIME_DIR $TMPDIR
     end
 
-    if string match -q -- $hostname carafe
+    if string match -q -- $hostname carafe whisk
         # iTerm2
         source ~/.iterm2_shell_integration.fish
     end
@@ -103,17 +103,17 @@ if status is-interactive
 end
 
 
-if string match -q -- $hostname carafe
-    # pnpm
+# pnpm
+if string match -q -- $hostname carafe whisk
     set -gx PNPM_HOME /Users/phil/Library/pnpm
     if not string match -q -- $PNPM_HOME $PATH
         set -gx PATH "$PNPM_HOME" $PATH
     end
-    # pnpm end
 
     # Dec 28, 2024 This is a hack and I'm sorry about it
     fish_add_path /nix/store/msgwpjsr2607nmlm4f0klc60m7vyp2ls-git-2.46.0/bin/
 end
+# pnpm end
 
 if string match -q -- $hostname knife
     if status is-login
