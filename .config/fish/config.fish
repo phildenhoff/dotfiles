@@ -97,6 +97,9 @@ if status is-interactive
 
     # Add zoxide, a better cd
     zoxide init fish | source
+
+    # Move Wakatime to the XDG_CONFIG directory, instead of being in $HOME
+    set --export WAKATIME_HOME "$XDG_CONFIG_HOME/wakatime"
 end
 
 

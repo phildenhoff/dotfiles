@@ -1,2 +1,6 @@
 **/prompts/
 **/conversations/
+
+# This is a beastyl file; it's a historical record of every file open. Easily many MBs
+wakatime/wakatime.log
+wakatime/offline_heartbeats.bdb
