@@ -66,6 +66,7 @@ let
     topgrade
     uv # Python version & dependency mgmt tool
     watchman
+    wakatime
     wezterm
     wget
     viddy # Replaces `watch`, with auto-recorded history
