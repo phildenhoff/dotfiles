@@ -27,7 +27,7 @@ let
     zlib # Dec 30, 2024 Moved from Brew, no idea if I need it
     zoxide
     # Tools
-    # _1password-cli # Dec 30, 2024 Moved from Brew, but disabled today since I can't find the pkg rn
+    _1password # Dec 30, 2024 Moved from Brew
     nixpkgsdarwin.atuin
     bottom
     bun
@@ -94,6 +94,7 @@ let
     meld
   ];
 in {
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [] ++ workPackages ++ personalPackages ++ educationPkgs ++ testingPkgs ++ uiPkgs;
 
   programs.fish.enable = true;
