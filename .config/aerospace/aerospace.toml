@@ -4,9 +4,14 @@
 after-login-command = []
 
 # You can use it to add commands that run after AeroSpace startup.
+# Note that this doesn't run after **reloading** the config, only startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = [
+  # Mar 21, 2025 This is obviously the ideal way to load JankyBorders 😵‍💫
+  # `borders` and `/run/current-system/sw/bin/borders` both did not work. No idea why.
+  'exec-and-forget /nix/store/37da660jp2pcmi7lv8wgfrqa05g446b2-JankyBorders-1.7.0/bin/borders active_color=0xff40b4da inactive_color=0xff494d64 width=5.0'
+]
 
 # Start AeroSpace at login
 start-at-login = true
