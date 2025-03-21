@@ -20,6 +20,7 @@ let
     git
     git-lfs
     gnupg
+    jankyborders
     jq
     ripgrep
     sd
