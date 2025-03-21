@@ -84,7 +84,6 @@ if status is-interactive
 
     jj util completion fish | source
 
-
     # 1Password SSH auth socket so that libssh2 programs (like jj) can use
     # 1P for SSH auth
     set --export SSH_AUTH_SOCK "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
@@ -103,17 +102,28 @@ if status is-interactive
 end
 
 
-# pnpm
 if string match -q -- $hostname carafe whisk
+    # pnpm
     set -gx PNPM_HOME /Users/phil/Library/pnpm
     if not string match -q -- $PNPM_HOME $PATH
         set -gx PATH "$PNPM_HOME" $PATH
     end
+    # pnpm end
 
     # Dec 28, 2024 This is a hack and I'm sorry about it
     fish_add_path /nix/store/msgwpjsr2607nmlm4f0klc60m7vyp2ls-git-2.46.0/bin/
+
+    # Added by OrbStack: command-line tools and integration
+    # This won't be added again if you remove it.
+    source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 end
-# pnpm end
+
+if string match -q -- $hostname whisk
+    # wasmtime was added for Orbit's focus on Shopify Functions. It may not be necessaryk1
+    set -gx WASMTIME_HOME "$HOME/.wasmtime"
+
+    string match -r ".wasmtime" "$PATH" >/dev/null; or set -gx PATH "$WASMTIME_HOME/bin" $PATH
+end
 
 if string match -q -- $hostname knife
     if status is-login
