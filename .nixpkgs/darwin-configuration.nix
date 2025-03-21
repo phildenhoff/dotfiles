@@ -24,15 +24,18 @@
     };
   };
   ids.gids.nixbld = 350;
-  networking.hosts = {
-    "192.168.2.1" = [ "unifi.local" "paradise.local" ];
-    "40.233.86.119" = [ "opc.internal.denhoff.ca" ];
-  };
+  # Disabled Mar 21, 2025, this was removed from nix-darwin
+  # https://github.com/LnL7/nix-darwin/issues/1035
+  #networking.hosts = {
+  #  "192.168.2.1" = [ "unifi.local" "paradise.local" ];
+  #  "40.233.86.119" = [ "opc.internal.denhoff.ca" ];
+  #};
 
   documentation.enable = false;
   documentation.doc.enable = false;
   documentation.man.enable = false;
 
   # security.pam.enableSudoTouchIdAuth = true;
-  security.pam.services.sudo_local.touchIdAuth = true;
+  # Disabled Mar 21, 2025 This is not a config option anymore. Was it renamed...?
+  # security.pam.services.sudo_local.touchIdAuth = true;
 }
