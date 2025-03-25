@@ -6,10 +6,58 @@ disabled=true
 
 [custom.jj]
 description = "Show the current jj revision"
-command = 'jj log -T "change_id.shortest()" -r "@" --no-graph --ignore-working-copy'
-#detect_folders = [".jj"]
+command = '''
+jj log --ignore-working-copy --no-graph --color always -r @ -T '
+  separate(
+    " ",
+    if(conflict, "(conflict)"),
+    if(empty, "(empty)"),
+    if(divergent, "(divergent)"),
+    if(hidden, "(hidden)"),
+    coalesce(
+      surround(
+        "\"",
+        "\"",
+        if(
+          description.first_line().substr(0, 24).starts_with(description.first_line()),
+          description.first_line().substr(0, 24),
+          description.first_line().substr(0, 23) ++ "…"
+        )
+      ),
+      "(no description set)"
+    ),
+    surround(
+      "(",
+      ")",
+      separate(
+        " ",
+        parents.map(|parent| parent.change_id().shortest()),
+        change_id.shortest(),
+        bookmarks.join(", "),
+      )
+    )
+  )
+'
+'''
 when = 'jj root | grep -q "^/"'
-symbol = "◉ "
-style = 'bold purple'
-format = 'on [$symbol$output]($style) '
+symbol = "◉"
+format = 'on [$symbol]($style) $output '
 
+# optionally disable git modules
+[git_state]
+disabled = true
+
+[git_commit]
+disabled = true
+
+[git_metrics]
+disabled = true
+
+[git_branch]
+disabled = true
+
+# re-enable git_branch as long as we're not in a jj repo
+[custom.git_branch]
+when = true
+command = "jj root >/dev/null 2>&1 || starship module git_branch"
+description = "Only show git_branch if we're not in a jj repo"
