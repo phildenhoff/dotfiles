@@ -24,8 +24,8 @@
   ],
   "assistant": {
     "default_model": {
-      "provider": "deepseek",
-      "model": "deepseek-chat"
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
     },
     "version": "2"
   },
@@ -33,7 +33,7 @@
   // "buffer_font_family": "Zed Mono",
   "buffer_font_family": "FiraCode Nerd Font",
   "features": {
-    "edit_prediction_provider": "supermaven",
+    "edit_prediction_provider": "copilot",
     "copilot": false
   },
   "icon_theme": "Catppuccin Latte",
