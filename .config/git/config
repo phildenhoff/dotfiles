@@ -34,11 +34,11 @@
     line-numbers-minus-style = 124
     line-numbers-plus-style = 28
 [merge]
-	  conflictstyle = diff3
+    conflictstyle = diff3
 [diff]
     colorMoved = default
     # Use difftastic
-    external = difft
+    # external = difft
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
