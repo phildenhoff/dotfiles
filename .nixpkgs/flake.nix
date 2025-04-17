@@ -12,8 +12,27 @@
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages =
-        [ pkgs.vim
+      environment.systemPackages = with pkgs;
+        [
+          # Apps
+          wezterm
+
+          # Tools
+          atuin
+          delta
+          eza
+          fish
+          fnm
+          jujutsu
+          ripgrep
+          starship
+          viddy
+          zoxide
+
+          # Editors & plugins
+          vim
+          neovim
+          helix
         ];
 
       # Necessary for using flakes on this system.
@@ -37,8 +56,7 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."press" = nix-darwin.lib.darwinSystem {
-      # modules = [ configuration ];
-      modules = [ ./darwin-configuration.nix ];
+      modules = [ configuration ];
     };
   };
 }
