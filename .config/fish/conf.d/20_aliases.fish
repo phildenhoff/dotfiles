@@ -14,8 +14,8 @@ alias v=nvim
 ## Use bat to replace cat
 alias cat=bat
 
-## Use exa to replace ls
-alias ls='exa --icons'
+## Use eza to replace ls
+alias ls='eza --icons'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
