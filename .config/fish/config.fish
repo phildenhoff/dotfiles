@@ -1,5 +1,9 @@
 set --export NNN_PLUG 'p:pd-preview'
 
+if string match -q -- $hostname press.local
+  fish_add_path /run/current-system/sw/bin
+end
+
 # Commands to run in interactive sessions can go in here
 if status is-interactive
     if string match -q -- $hostname carafe whisk
@@ -27,8 +31,10 @@ if status is-interactive
     # Add Starship prompt
     starship init fish | source
 
-    # fnm is a faster version of nvm
-    eval "$(fnm env --use-on-cd --shell=fish)"
+    if string match -q -- $hostname carafe whisk
+        # fnm is a faster version of nvm
+        eval "$(fnm env --use-on-cd --shell=fish)"
+    end
 
     # Bun
     set --export BUN_INSTALL $XDG_STATE_HOME/bun
