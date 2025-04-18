@@ -10,29 +10,50 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
     configuration = { pkgs, ... }: {
+
+      fonts.packages = with pkgs; [
+        nerd-fonts.fira-code
+      ];
+
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs;
         [
           # Apps
+          aerospace
           wezterm
 
           # Tools
           atuin
+          bat
           delta
+          entr
           eza
+          fd
           fish
           fnm
+          fzf
+          git
+          git-lfs
+          jankyborders
+          jq
           jujutsu
           ripgrep
+          sd
           starship
+          tokei
+          unzip
           viddy
+          zip
+          zellij
           zoxide
 
           # Editors & plugins
           vim
           neovim
           helix
+
+          # Work
         ];
 
       # Necessary for using flakes on this system.
@@ -47,6 +68,14 @@
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
       system.stateVersion = 6;
+
+      system.defaults = {
+        loginwindow.LoginwindowText = "phil@digits.com | 250 327 7468";
+        NSGlobalDomain = {
+          # Disable holding keyboard keys to access diacritics
+          ApplePressAndHoldEnabled = false;
+        };
+      };
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
