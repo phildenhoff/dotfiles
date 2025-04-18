@@ -1,7 +1,8 @@
 set --export NNN_PLUG 'p:pd-preview'
 
 if string match -q -- $hostname press.local
-  fish_add_path /run/current-system/sw/bin
+    fish_add_path /run/current-system/sw/bin
+    fish_add_path /opt/homebrew/bin/brew
 end
 
 # Commands to run in interactive sessions can go in here
@@ -106,7 +107,6 @@ if status is-interactive
     # Move Wakatime to the XDG_CONFIG directory, instead of being in $HOME
     set --export WAKATIME_HOME "$XDG_CONFIG_HOME/wakatime"
 end
-
 
 if string match -q -- $hostname carafe whisk
     # pnpm
