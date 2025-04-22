@@ -5,6 +5,8 @@
 #    insteadOf = https://github.com/
 [includeIf "gitdir:/Users/phil/work/**"]
     path = work.gitconfig
+[includeIf "gitdir:/Users/phildenhoff/digits/**"]
+    path = digits.gitconfig
 [core]
     editor = hx
     pager = delta
