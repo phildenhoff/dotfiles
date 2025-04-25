@@ -11,6 +11,8 @@
   let
     configuration = { pkgs, ... }: {
 
+      nixpkgs.config.allowUnfree = true;
+
       fonts.packages = with pkgs; [
         nerd-fonts.fira-code
       ];
@@ -21,6 +23,8 @@
         [
           # Apps
           aerospace
+          ice-bar
+          raycast # Unfree
           wezterm
 
           # Tools
@@ -33,6 +37,7 @@
           fish
           fnm
           fzf
+          gh
           git
           git-lfs
           jankyborders
