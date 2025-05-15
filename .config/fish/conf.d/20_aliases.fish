@@ -74,6 +74,8 @@ alias gst="git status --short --branch"
 alias grbi="git rebase -i"
 alias grbc="git rebase --continue"
 
+alias gs="git switch"
+
 function gpsup
     git push --set-upstream origin $(git symbolic-ref --short HEAD)
 end
