@@ -32,6 +32,7 @@
           atuin
           bat
           delta
+          difftastic
           entr
           eza
           fd
