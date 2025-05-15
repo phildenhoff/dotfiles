@@ -32,7 +32,7 @@ if status is-interactive
     # Add Starship prompt
     starship init fish | source
 
-    if string match -q -- $hostname carafe whisk
+    if string match -q -- $hostname carafe whisk press.local
         # fnm is a faster version of nvm
         eval "$(fnm env --use-on-cd --shell=fish)"
     end

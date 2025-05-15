@@ -10,7 +10,13 @@ if string match -q -- $hostname press.local
 
     # Java
     set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home
+    ## and its cousin Gradle
+    set -gx GRADLE_USER_HOME ~/.gradle
 
     # Go
     fish_add_path /Users/phildenhoff/go/bin
+
+    # pnpm
+    fish_add_path /Users/phildenhoff/Library/pnpm
+
 end
