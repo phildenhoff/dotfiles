@@ -50,6 +50,7 @@
           starship
           tokei
           unzip
+          uv
           viddy
           zip
           zellij
