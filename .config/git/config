@@ -20,7 +20,7 @@
 [delta]
     navigate = true
     features = side-by-side line-numbers decorations
-    #syntax-theme = GitHub
+    syntax-theme = GitHub
     # syntax-theme = Dracula
     plus-style = syntax "#003800"
     minus-style = syntax "#3f0001"
@@ -40,7 +40,7 @@
 [diff]
     colorMoved = default
     # Use difftastic
-    # external = difft
+    external = difft
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
