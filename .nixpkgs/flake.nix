@@ -23,6 +23,7 @@
         [
           # Apps
           aerospace
+          pika
           ice-bar
           raycast # Unfree
           wezterm
