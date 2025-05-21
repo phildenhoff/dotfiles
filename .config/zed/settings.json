@@ -8,7 +8,7 @@
 // from the command palette or from `Zed` application menu.
 {
   "git_panel": {
-    "button": false
+    "button": true
   },
   "ssh_connections": [
     {
