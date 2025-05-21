@@ -109,5 +109,6 @@
   },
   "wrap_guides": [
     80
-  ]
+  ],
+  "minimap": {"show": "auto"}
 }
