@@ -84,9 +84,13 @@
     }
   },
   "lsp": {
-    "lexical": {
-      "binary": {
-        "path": "/Users/phil/work/lexical/_build/dev/package/lexical/bin/start_lexical.sh"
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "preferences": {
+            "importModuleSpecifier": "non-relative"
+          }
+        }
       }
     }
   },
