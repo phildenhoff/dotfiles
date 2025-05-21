@@ -29,6 +29,7 @@
           wezterm
 
           # Tools
+          _1password-cli
           atuin
           bat
           delta
