@@ -1,6 +1,6 @@
 set --export NNN_PLUG 'p:pd-preview'
 
-if string match -q -- $hostname press.local
+if string match -q -- $hostname press
     fish_add_path /run/current-system/sw/bin
     fish_add_path /opt/homebrew/bin/brew
 end
@@ -32,7 +32,7 @@ if status is-interactive
     # Add Starship prompt
     starship init fish | source
 
-    if string match -q -- $hostname carafe whisk press.local
+    if string match -q -- $hostname carafe whisk press
         # fnm is a faster version of nvm
         eval "$(fnm env --use-on-cd --shell=fish)"
     end
