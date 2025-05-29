@@ -18,5 +18,12 @@
     "bindings": {
       // "j k": ["workspace::SendKeystrokes", "escape"]
     }
+  },
+  // cmd+option+p opens Zed Rules
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-alt-p": ["agent::OpenRulesLibrary", {}]
+    }
   }
 ]
