@@ -16,3 +16,7 @@ diff-editor = ":builtin"
 
 [revset-aliases]
 'mine' = 'main@origin..author(phil)'
+
+[aliases]
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+
