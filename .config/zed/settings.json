@@ -30,10 +30,9 @@
     "default_profile": "write",
     "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "provider": "anthropic",
+      "model": "claude-opus-4-thinking-latest"
     },
-    "version": "2"
   },
   "buffer_font_size": 14,
   // "buffer_font_family": "Zed Mono",
@@ -109,10 +108,29 @@
   "theme": "Catppuccin Latte",
   "vim_mode": true,
   "vim": {
-    "use_system_clipboard":"never"
+    "use_system_clipboard": "never"
   },
   "wrap_guides": [
     80
   ],
-  "minimap": {"show": "auto"}
+  "minimap": {
+    "show": "auto",
+    "display_in": "active_editor"
+  },
+  "diagnostics": {
+  	"button": true,
+  	"include_warnings": true,
+  	"lsp_pull_diagnostics": {
+  		"enabled": true,
+  		"debounce_ms": 50
+  	},
+  	"inline": {
+  		"enabled": true,
+  		"update_debounce_ms": 150,
+  		"padding": 4,
+  		"min_column": 0,
+  		"max_severity": null
+  	},
+  	"cargo": null
+  }
 }
