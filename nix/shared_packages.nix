@@ -10,7 +10,6 @@ let
   ];
   personalPackages = with pkgs; [
     # Utilities
-    aerospace
     bat
     dogdns
     entr
