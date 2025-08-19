@@ -31,7 +31,7 @@
     "always_allow_tool_actions": true,
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-opus-4-thinking-latest"
+      "model": "claude-opus-4-1-thinking-latest"
     },
   },
   "buffer_font_size": 14,
