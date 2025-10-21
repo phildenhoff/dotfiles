@@ -1,7 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export CARAPACE_BRIDGES:zsh\x2cfish\x2cbash\x2cinshellisense
-SETUVAR --export GRADLE_USER_HOME:\x1d
+SETUVAR --export GRADLE_USER_HOME:/Users/phil/\x2elocal/share/gradle
 SETUVAR __fish_initialized:3800
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:\x7e/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_list\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e\x7e/\x2econfig/fish/completions/nvm\x2efish
@@ -31,10 +30,11 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrbl
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_greeting:
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/Users/phildenhoff/\x2elocal/bin\x1e/Users/phildenhoff/\x2elocal/state/bun/bin\x1e/Users/phildenhoff/\x2edeno/bin\x1e/Users/phildenhoff/Library/pnpm\x1e/Users/phildenhoff/go/bin\x1e/opt/homebrew/bin\x1e/run/current\x2dsystem/sw/bin\x1e/Users/phil/\x2elocal/bin\x1e/Users/phil/\x2eiterm2\x1e/Users/phil/\x2elocal/share/cargo/bin\x1e/nix/store/msgwpjsr2607nmlm4f0klc60m7vyp2ls\x2dgit\x2d2\x2e46\x2e0/bin\x1e/Users/phil/\x2enix\x2dprofile/bin\x1e/nix/var/nix/profiles/default/bin\x1e/Users/phil/\x2elocal/state/moon/bin\x1e/Users/phil/\x2elocal/state/bun/bin\x1e/Users/phil/\x2espicetify\x1e/Users/phil/\x2ecargo/bin\x1e/Users/phil/\x2easdf/shims\x1e/opt/homebrew/opt/asdf/libexec/bin\x1e/Users/phil/Library/Android/sdk/tools\x1e/Users/phil/Library/Android/sdk/platform\x2dtools\x1e/Users/phil/\x2ebun/bin\x1e/opt/homebrew/opt/erlang\x4024/bin\x1e/opt/homebrew/lib/ruby/gems/3\x2e0\x2e0/bin\x1e/opt/homebrew/opt/ruby/bin\x1e/Users/phil/\x2eyarn/bin
+SETUVAR fish_user_paths:/Users/phil/\x2eiterm2\x1e/Users/phil/\x2elocal/bin\x1e/Users/phildenhoff/\x2elocal/bin\x1e/Users/phildenhoff/\x2elocal/state/bun/bin\x1e/Users/phildenhoff/\x2edeno/bin\x1e/Users/phildenhoff/Library/pnpm\x1e/Users/phildenhoff/go/bin\x1e/opt/homebrew/bin\x1e/run/current\x2dsystem/sw/bin\x1e/Users/phil/\x2elocal/share/cargo/bin\x1e/nix/store/msgwpjsr2607nmlm4f0klc60m7vyp2ls\x2dgit\x2d2\x2e46\x2e0/bin\x1e/Users/phil/\x2enix\x2dprofile/bin\x1e/nix/var/nix/profiles/default/bin\x1e/Users/phil/\x2elocal/state/moon/bin\x1e/Users/phil/\x2elocal/state/bun/bin\x1e/Users/phil/\x2espicetify\x1e/Users/phil/\x2ecargo/bin\x1e/Users/phil/\x2easdf/shims\x1e/opt/homebrew/opt/asdf/libexec/bin\x1e/Users/phil/Library/Android/sdk/tools\x1e/Users/phil/Library/Android/sdk/platform\x2dtools\x1e/Users/phil/\x2ebun/bin\x1e/opt/homebrew/opt/erlang\x4024/bin\x1e/opt/homebrew/lib/ruby/gems/3\x2e0\x2e0/bin\x1e/opt/homebrew/opt/ruby/bin\x1e/Users/phil/\x2eyarn/bin
