@@ -3,7 +3,7 @@ local wezterm = require 'wezterm';
 return {
   color_scheme = "Catppuccin Latte",
   -- color_scheme = "Catppuccin Mocha",
-  enable_tab_bar = false,
+  enable_tab_bar = true,
   use_fancy_tab_bar = false,
   window_background_opacity = 1,
   window_decorations = "RESIZE",
