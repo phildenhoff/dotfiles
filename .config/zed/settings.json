@@ -31,7 +31,7 @@
     "always_allow_tool_actions": true,
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-opus-4-1-thinking-latest"
+      "model": "claude-sonnet-4-latest"
     },
   },
   "buffer_font_size": 14,
@@ -65,25 +65,7 @@
     "Markdown": {
       "show_edit_predictions": false,
       "soft_wrap": "none",
-      "show_whitespaces": "all",
-    },
-    "Elixir": {
-      "language_servers": [
-        "lexical",
-        "!elixir-ls",
-        "!next-ls"
-      ],
-      "format_on_save": {
-        "external": {
-          "command": "mix",
-          "arguments": [
-            "format",
-            "--stdin-filename",
-            "{buffer_path}",
-            "-"
-          ]
-        }
-      }
+      "show_whitespaces": "all"
     }
   },
   "lsp": {
