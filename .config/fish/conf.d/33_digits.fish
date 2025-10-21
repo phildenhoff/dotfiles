@@ -18,4 +18,10 @@ if string match -q -- $hostname press
 
     # pnpm
     fish_add_path /Users/phildenhoff/Library/pnpm
+
+    # bun
+    fish_add_path /Users/phildenhoff/.local/state/bun/bin
+
+    # Rust (cargo pkgs)
+    source "$HOME/.cargo/env.fish"
 end
