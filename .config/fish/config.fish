@@ -24,6 +24,14 @@ if status is-interactive
         set --export XDG_RUNTIME_DIR $TMPDIR
     end
 
+    if string match -q -- $hostname press
+        set --export XDG_CACHE_HOME '/Users/phildenhoff/.cache'
+        set --export XDG_DATA_HOME '/Users/phildenhoff/.local/share'
+        set --export XDG_CONFIG_HOME '/Users/phildenhoff/.config'
+        set --export XDG_STATE_HOME '/Users/phildenhoff/.local/state'
+        set --export XDG_RUNTIME_DIR $TMPDIR
+    end
+
     if string match -q -- $hostname carafe whisk
         # iTerm2
         source ~/.iterm2_shell_integration.fish
@@ -129,6 +137,13 @@ if string match -q -- $hostname whisk
     set -gx WASMTIME_HOME "$HOME/.wasmtime"
 
     string match -r ".wasmtime" "$PATH" >/dev/null; or set -gx PATH "$WASMTIME_HOME/bin" $PATH
+
+    # pnpm
+    set -gx PNPM_HOME "/Users/phildenhoff/Library/pnpm"
+    if not string match -q -- $PNPM_HOME $PATH
+      set -gx PATH "$PNPM_HOME" $PATH
+    end
+    # pnpm end
 end
 
 if string match -q -- $hostname knife
