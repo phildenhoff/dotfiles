@@ -10,7 +10,7 @@ HOSTNAME=$(hostname -s)
 case "$HOSTNAME" in
   press)
     # Work machine
-    OP_VAULT="Work"
+    OP_VAULT="Employee"
     ;;
   carafe)
     # Home machine
