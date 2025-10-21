@@ -44,7 +44,6 @@
           git-lfs
           jankyborders
           jq
-          jujutsu
           ripgrep
           sd
           starship
@@ -77,6 +76,7 @@
       # $ darwin-rebuild changelog
       system.stateVersion = 6;
 
+      system.primaryUser = "phildenhoff";
       system.defaults = {
         loginwindow.LoginwindowText = "phil@digits.com | 250 327 7468";
         NSGlobalDomain = {
