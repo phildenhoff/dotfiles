@@ -23,31 +23,28 @@
     }
   ],
   "agent": {
-    "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "gemini-2.5-pro"
-    },
+     "inline_assistant_model": {
+       "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
+     },
     "default_profile": "write",
     "always_allow_tool_actions": true,
     "default_model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-latest"
     },
+    "model_parameters": []
   },
   "buffer_font_size": 14,
   // "buffer_font_family": "Zed Mono",
   "buffer_font_family": "FiraCode Nerd Font",
   "features": {
-    "edit_prediction_provider": "copilot",
-    "copilot": false
+    "edit_prediction_provider": "copilot"
   },
   "icon_theme": "Catppuccin Latte",
   "code_actions_on_format": {
     "source.fixAll": true,
     "source.organizeImports.biome": true
-  },
-  "experiments": {
-    "experimental_themes": true
   },
   "format_on_save": "off",
   "formatter": "language_server",
@@ -65,7 +62,7 @@
     "Markdown": {
       "show_edit_predictions": false,
       "soft_wrap": "none",
-      "show_whitespaces": "all"
+       "show_whitespaces": "all"
     }
   },
   "lsp": {
@@ -112,7 +109,6 @@
   		"padding": 4,
   		"min_column": 0,
   		"max_severity": null
-  	},
-  	"cargo": null
+  	}
   }
 }
