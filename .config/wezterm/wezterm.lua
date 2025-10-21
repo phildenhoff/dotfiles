@@ -8,9 +8,13 @@ local function is_appearance_dark()
   return apperance:find("Dark")
 end
 
-if is_appearance_dark() then
+local function is_press()
+  return wezterm.hostname() == "press"
+end
+
+if is_appearance_dark() or is_press() then
   config.color_scheme = "Catppuccin Mocha"
-else 
+else
   config.color_scheme = "Catppuccin Latte"
 end
 
