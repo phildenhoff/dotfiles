@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm';
 
 return {
-  color_scheme = "Catppuccin Mocha",
+  color_scheme = "Catppuccin Latte",
   -- color_scheme = "Catppuccin Mocha",
   enable_tab_bar = true,
   use_fancy_tab_bar = false,
