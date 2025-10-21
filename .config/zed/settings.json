@@ -7,6 +7,8 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "helix_mode": true,
+  "confirm_quit": true,
   "git_panel": {
     "button": true
   },
@@ -84,8 +86,8 @@
     "font_size": 12
   },
   "tab_size": 2,
-  "theme": "Catppuccin Latte",
-  "vim_mode": true,
+  "theme": "Catppuccin Mocha",
+  "vim_mode": false,
   "vim": {
     "use_system_clipboard": "never"
   },
