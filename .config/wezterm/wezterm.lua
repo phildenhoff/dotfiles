@@ -1,8 +1,21 @@
 local wezterm = require 'wezterm';
 
+local config = wezterm.config_builder()
+
+local function is_appearance_dark()
+  local apperance = (wezterm.gui and wezterm.gui.get_appearance()) or 'Light'
+  return apperance:find("Dark")
+end
+
+if is_appearance_dark() then
+  config.color_scheme = "Catppuccin Mocha"
+else 
+  config.color_scheme = "Catppuccin Latte"
+end
+
+
 return {
-  color_scheme = "Catppuccin Latte",
-  -- color_scheme = "Catppuccin Mocha",
+  color_scheme = config.color_scheme,
   enable_tab_bar = true,
   use_fancy_tab_bar = false,
   window_background_opacity = 1,
