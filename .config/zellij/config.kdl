@@ -2,8 +2,16 @@ keybinds {
     unbind "Ctrl o"
     unbind "Alt Left"
     unbind "Alt Right"
+
+    shared_except "locked" {
+        // Pass-through Alt-Left / Alt-Right (properly encoded to go word-by)
+        // to underling tool
+        unbind "Alt f"
+        unbind "Alt b"
+    }
     normal {
         bind "Ctrl l" { SwitchToMode "session"; }
+        bind "Ctrl f" { ToggleFloatingPanes; }
     }
     locked {
     }
