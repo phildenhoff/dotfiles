@@ -2,6 +2,14 @@
 let
   unstable = import <nixpkgs> { config = { allowUnfree = true; }; };
   nixpkgsdarwin = import <nixpkgs-24.11-darwin> {};
+  # Override jujutsu to skip tests and remove cargo-nextest, avoiding broken dependency on macOS
+  jujutsuNoTests = pkgs.jujutsu.overrideAttrs (old: {
+    doCheck = false;
+    doInstallCheck = false;
+    nativeBuildInputs = builtins.filter
+      (pkg: !(builtins.match ".*cargo-nextest.*" (pkg.name or "") != null))
+      (old.nativeBuildInputs or []);
+  });
   workPackages = with pkgs; [
     alacritty
     colima
@@ -39,7 +47,7 @@ let
     dua
     unstable.deno
     difftastic
-    du-dust
+    dust
     eternal-terminal
     eza
     ffmpeg
@@ -49,14 +57,14 @@ let
     httpie
     hyperfine
     imagemagick
-    unstable.jujutsu
+    jujutsuNoTests
     mosh
     mprocs
     neofetch
     nnn
     podman
     restic
-    rustic-rs
+    rustic
     sptlrx
     sqldiff
     starship
@@ -66,8 +74,8 @@ let
     topgrade
     uv # Python version & dependency mgmt tool
     watchman
-    wakatime
-    wezterm
+    wakatime-cli
+    unstable.wezterm
     wget
     viddy # Replaces `watch`, with auto-recorded history
     xh
@@ -75,7 +83,7 @@ let
     zellij # Terminal Multiplexer. Replaces `screen` and `tmux`.
     # Editors & plugins
     efm-langserver # Dec 30, 2024 Moved from Brew, although I'm not sure what it's for
-    kak-lsp
+    kakoune-lsp
     kakoune
     neovim
     unstable.helix
