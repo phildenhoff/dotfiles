@@ -4,3 +4,4 @@
 dostow.sh
 knife
 nix
+.*\.template$
