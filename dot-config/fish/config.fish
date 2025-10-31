@@ -40,7 +40,7 @@ if status is-interactive
     # Add Starship prompt
     starship init fish | source
 
-    if string match -q -- $hostname carafe whisk press
+    if string match -q -- $hostname carafe whisk
         # fnm is a faster version of nvm
         eval "$(fnm env --use-on-cd --shell=fish)"
     end
@@ -139,9 +139,9 @@ if string match -q -- $hostname whisk
     string match -r ".wasmtime" "$PATH" >/dev/null; or set -gx PATH "$WASMTIME_HOME/bin" $PATH
 
     # pnpm
-    set -gx PNPM_HOME "/Users/phildenhoff/Library/pnpm"
+    set -gx PNPM_HOME /Users/phildenhoff/Library/pnpm
     if not string match -q -- $PNPM_HOME $PATH
-      set -gx PATH "$PNPM_HOME" $PATH
+        set -gx PATH "$PNPM_HOME" $PATH
     end
     # pnpm end
 end
