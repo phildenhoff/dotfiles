@@ -44,18 +44,18 @@ render_template() {
 }
 
 # Render wakatime config
-if [ -f ".config/wakatime/.wakatime.cfg.template" ]; then
+if [ -f "dot-config/wakatime/.wakatime.cfg.template" ]; then
   echo "Rendering wakatime config..."
 
   WAKATIME_API_KEY=$(op read "op://$OP_VAULT/Wakapi API Key/credential")
 
   render_template \
-    ".config/wakatime/.wakatime.cfg.template" \
-    ".config/wakatime/.wakatime.cfg" \
+    "dot-config/wakatime/.wakatime.cfg.template" \
+    "dot-config/wakatime/.wakatime.cfg" \
     "WAKATIME_API_KEY" "$WAKATIME_API_KEY"
 
   echo "✔︎ Wakatime config rendered"
 fi
 
 # Run stow
-stow --dir="$HOME/.config/_dotfiles" --target="$HOME" .
+stow --dotfiles --dir="$HOME/.config/_dotfiles" --target="$HOME" .
