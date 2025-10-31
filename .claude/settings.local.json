@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/phildenhoff/.config/fish/**)",
+      "Bash(test:*)",
+      "Bash(env -C ~/digits/frontend-webapp fish -c \"which node && node --version\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
