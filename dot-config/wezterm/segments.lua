@@ -24,7 +24,7 @@ local function get_current_kube_context()
   end
 
   if not success or not output or output == "" then
-    return "1N/A"
+    return ""
   end
 
   -- Trim whitespace from both ends
