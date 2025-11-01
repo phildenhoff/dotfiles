@@ -1,0 +1,30 @@
+# merge-tools.TOOL.edit-args = ["$left", "$right", "$output"]
+# snapshot.max-new-file-size = "10M"
+
+[user]
+name = "Phil Denhoff"
+email = "phil@denhoff.ca"
+
+[ui]
+diff-formatter = ["difft", "--color=always", "$left", "$right"]
+editor = "hx"
+# pager = "delta"
+# pager=["delta", "--pager", "less -FRX"]
+default-command = "log"
+diff-editor = ":builtin"
+
+[revset-aliases]
+'mine' = 'main@origin..author(phil)'
+
+[aliases]
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+
+{{#IF_HOSTNAME_press}}
+[git]
+ignore-files = ["lfs", ".ck/"]
+
+[signing]
+behavior = "own"
+backend = "ssh"
+key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGRbWSzKa2PP48VN1k+Fr9I57vR56ZOXsisdElijhvVS"
+{{/IF_HOSTNAME_press}}

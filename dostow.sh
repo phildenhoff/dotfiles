@@ -31,6 +31,22 @@ render_template() {
   local content
   content=$(cat "$template_file")
 
+  # Process conditional blocks {{#IF_HOSTNAME_name}}...{{/IF_HOSTNAME_name}}
+  # Only keeps content if HOSTNAME matches
+  while [[ $content =~ \{\{#IF_HOSTNAME_([^}]+)\}\}(.*)\{\{/IF_HOSTNAME_[^}]+\}\} ]]; do
+    local condition="${BASH_REMATCH[1]}"
+    local block_content="${BASH_REMATCH[2]}"
+    local full_match="${BASH_REMATCH[0]}"
+
+    if [ "$HOSTNAME" = "$condition" ]; then
+      # Keep the content (without the conditional tags)
+      content="${content//"$full_match"/$block_content}"
+    else
+      # Remove the entire block
+      content="${content//"$full_match"/}"
+    fi
+  done
+
   # Replace all {{VAR}} with values from remaining arguments
   while [ $# -gt 0 ]; do
     local key=$1
@@ -55,6 +71,17 @@ if [ -f "dot-config/wakatime/.wakatime.cfg.template" ]; then
     "WAKATIME_API_KEY" "$WAKATIME_API_KEY"
 
   echo "✔︎ Wakatime config rendered"
+fi
+
+# Render jj config
+if [ -f "dot-jjconfig.toml.template" ]; then
+  echo "Rendering jj config..."
+
+  render_template \
+    "dot-jjconfig.toml.template" \
+    "dot-jjconfig.toml"
+
+  echo "✔︎ JJ config rendered"
 fi
 
 # Run stow
