@@ -63,7 +63,7 @@
           helix
 
           # Wakatime time-tracking
-          wakatime-ls
+          wakatime-ls.packages.${pkgs.system}.default
           wakatime-cli
 
           # Work
