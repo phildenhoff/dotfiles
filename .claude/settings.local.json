@@ -1,16 +1,20 @@
 {
-	"permissions": {
-		"allow": [
-			"Read(//Users/phildenhoff/.config/fish/**)",
-			"Bash(test:*)",
-			"Bash(env -C ~/digits/frontend-webapp fish -c \"which node && node --version\")",
-			"Bash(tree:*)",
-			"Bash(jj status:*)",
-			"Bash(shellcheck:*)",
-			"Read(//Users/phil/.config/zellij/**)",
-			"WebFetch(domain:zellij.dev)"
-		],
-		"deny": [],
-		"ask": []
-	}
+  "permissions": {
+    "allow": [
+      "Read(//Users/phildenhoff/.config/fish/**)",
+      "Bash(test:*)",
+      "Bash(env -C ~/digits/frontend-webapp fish -c \"which node && node --version\")",
+      "Bash(tree:*)",
+      "Bash(jj status:*)",
+      "Bash(shellcheck:*)",
+      "Read(//Users/phil/.config/zellij/**)",
+      "WebFetch(domain:zellij.dev)",
+      "Bash(fish -c \"bind\")",
+      "Bash(fish:*)",
+      "Read(//Users/phildenhoff/.config/wezterm/**)",
+      "Read(//Users/phildenhoff/.config/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
 }

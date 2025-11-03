@@ -72,7 +72,8 @@ return {
   show_tabs_in_tab_bar = false,
   show_new_tab_button_in_tab_bar = false,
   use_fancy_tab_bar = false,
-  window_background_opacity = 1,
+  window_background_opacity = 0.9,
+  macos_window_background_blur = 40,
   window_decorations = "RESIZE",
   front_end = "WebGpu",
   keys = {
