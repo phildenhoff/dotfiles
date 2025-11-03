@@ -5,9 +5,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    wakatime-ls.url = "github:mrnossiom/wakatime-ls";
+    wakatime-ls.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, wakatime-ls }:
   let
     configuration = { pkgs, ... }: {
 
@@ -59,6 +61,10 @@
           vim
           neovim
           helix
+
+          # Wakatime time-tracking
+          wakatime-ls
+          wakatime-cli
 
           # Work
         ];
