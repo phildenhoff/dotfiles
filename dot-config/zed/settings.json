@@ -86,7 +86,7 @@
     "font_size": 12
   },
   "tab_size": 2,
-  "theme": "Catppuccin Latte",
+  "theme": "Catppuccin Mocha (Blur)",
   "vim_mode": false,
   "vim": {
     "use_system_clipboard": "never"
