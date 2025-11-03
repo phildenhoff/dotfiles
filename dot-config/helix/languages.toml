@@ -1,7 +1,7 @@
 [language-server]
 biome = { command = "biome", args = ["lsp-proxy"] }
 svelte = { command = "svelteserver" }
-wakatime = { command = "wakatime-lsp" }
+wakatime = { command = "wakatime-ls" }
 
 [[language]]
 name = "mdx"
@@ -42,4 +42,60 @@ language-servers = [ { name = "vscode-json-language-server", except-features = [
 [[language]]
 name = "svelte"
 language-servers = [ { name = "svelte" }, "wakatime" ]
+
+[[language]]
+name = "go"
+language-servers = [ "gopls", "wakatime" ]
+
+[[language]]
+name = "gomod"
+language-servers = [ "gopls", "wakatime" ]
+
+[[language]]
+name = "gowork"
+language-servers = [ "gopls", "wakatime" ]
+
+[[language]]
+name = "rust"
+language-servers = [ "rust-analyzer", "wakatime" ]
+
+[[language]]
+name = "html"
+language-servers = [ "vscode-html-language-server", "wakatime" ]
+
+[[language]]
+name = "markdown"
+language-servers = [ "marksman", "wakatime" ]
+
+[[language]]
+name = "protobuf"
+language-servers = [ "bufls", "wakatime" ]
+
+[[language]]
+name = "python"
+language-servers = [ "pylsp", "wakatime" ]
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "wakatime" ]
+
+[[language]]
+name = "toml"
+language-servers = [ "taplo", "wakatime" ]
+
+[[language]]
+name = "yaml"
+language-servers = [ "yaml-language-server", "wakatime" ]
+
+[[language]]
+name = "nix"
+language-servers = [ "nil", "wakatime" ]
+
+[[language]]
+name = "bash"
+language-servers = [ "bash-language-server", "wakatime" ]
+
+[[language]]
+name = "fish"
+language-servers = [ "wakatime" ]
 
