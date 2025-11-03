@@ -63,7 +63,7 @@
           helix
 
           # Wakatime time-tracking
-          wakatime-ls.packages.${pkgs.system}.default
+          wakatime-ls.packages.${pkgs.stdenv.hostPlatform.system}.default
           wakatime-cli
 
           # Work
@@ -71,6 +71,7 @@
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
+      nix.settings.download-buffer-size = 268435456; # 256 MiB
 
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
