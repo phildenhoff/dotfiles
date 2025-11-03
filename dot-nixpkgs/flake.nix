@@ -62,6 +62,9 @@
           neovim
           helix
 
+          # Language servers
+          golangci-lint-langserver
+
           # Wakatime time-tracking
           wakatime-ls.packages.${pkgs.stdenv.hostPlatform.system}.default
           wakatime-cli

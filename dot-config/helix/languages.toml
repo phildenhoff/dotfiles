@@ -3,6 +3,9 @@ biome = { command = "biome", args = ["lsp-proxy"] }
 svelte = { command = "svelteserver" }
 wakatime = { command = "wakatime-ls" }
 
+[language-server.golangci-lint-lsp]
+command = "golangci-lint-langserver"
+
 [[language]]
 name = "mdx"
 scope = "source.mdx"
@@ -45,7 +48,8 @@ language-servers = [ { name = "svelte" }, "wakatime" ]
 
 [[language]]
 name = "go"
-language-servers = [ "gopls", "wakatime" ]
+language-servers = [ "gopls", "golangci-lint-lsp", "wakatime" ]
+formatter = { command = "gofmt" }
 
 [[language]]
 name = "gomod"
