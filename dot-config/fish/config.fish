@@ -12,7 +12,8 @@ if status is-interactive
     end
 
     # ENVVAR stuff
-    set --export EDITOR hx
+    # Use our Helix wrapper script that pulls the theme from the macos system settings
+    set --export EDITOR "$HOME/.local/bin/hx"
     set --export FZF_DEFAULT_COMMAND 'fd --type file --strip-cwd-prefix'
     set --export FZF_CTRL_T_COMMAND 'fd --follow --exclude .git --exclude node_modules'
 
