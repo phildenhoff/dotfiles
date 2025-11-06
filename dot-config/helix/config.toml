@@ -10,3 +10,11 @@ normal = "block"
 [editor.file-picker]
 hidden = false
 
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+other-lines = "info"
+

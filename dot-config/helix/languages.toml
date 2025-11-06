@@ -1,7 +1,26 @@
 [language-server]
 biome = { command = "biome", args = ["lsp-proxy"] }
 svelte = { command = "svelteserver" }
+vtsls = { command = "vtsls", args = ["--stdio"] }
 wakatime = { command = "wakatime-ls" }
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+format = { enable = true }
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = { useFlatConfig = true }
+problems = { shortenToSingleLine = false }
+
+[language-server.eslint.config.codeAction]
+disableRuleComment = { enable = true, location = "separateLine" }
+showDocumentation = { enable = false }
 
 [language-server.golangci-lint-lsp]
 command = "golangci-lint-langserver"
@@ -20,23 +39,23 @@ language-servers = [
 
 [[language]]
 name = "javascript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "wakatime" ]
+language-servers = [ { name = "vtsls", except-features = [ "format" ] }, "eslint", "biome", "wakatime" ]
 auto-format = true
 
 [[language]]
 name = "typescript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "wakatime" ]
+language-servers = [ { name = "vtsls", except-features = [ "format" ] }, "eslint", "biome", "wakatime" ]
 auto-format = true
 
 [[language]]
 name = "tsx"
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "wakatime" ]
+language-servers = [ { name = "vtsls", except-features = [ "format" ] }, "eslint", "biome", "wakatime" ]
 
 [[language]]
 name = "jsx"
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome", "wakatime" ]
+language-servers = [ { name = "vtsls", except-features = [ "format" ] }, "eslint", "biome", "wakatime" ]
 
 [[language]]
 name = "json"
