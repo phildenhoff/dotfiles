@@ -32,6 +32,7 @@
           # Tools
           _1password-cli
           atuin
+          ast-grep
           bat
           delta
           difftastic
