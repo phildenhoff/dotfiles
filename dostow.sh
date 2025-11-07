@@ -33,19 +33,44 @@ render_template() {
 
   # Process conditional blocks {{#IF_HOSTNAME_name}}...{{/IF_HOSTNAME_name}}
   # Only keeps content if HOSTNAME matches
-  while [[ $content =~ \{\{#IF_HOSTNAME_([^}]+)\}\}(.*)\{\{/IF_HOSTNAME_[^}]+\}\} ]]; do
-    local condition="${BASH_REMATCH[1]}"
-    local block_content="${BASH_REMATCH[2]}"
-    local full_match="${BASH_REMATCH[0]}"
+  # We need to process line by line to handle multiple blocks correctly
+  local result=""
+  local in_block=false
+  local block_condition=""
+  local block_content=""
 
-    if [ "$HOSTNAME" = "$condition" ]; then
-      # Keep the content (without the conditional tags)
-      content="${content//"$full_match"/$block_content}"
-    else
-      # Remove the entire block
-      content="${content//"$full_match"/}"
+  while IFS= read -r line; do
+    # Check for opening tag
+    if [[ $line =~ \{\{#IF_HOSTNAME_([^}]+)\}\} ]]; then
+      in_block=true
+      block_condition="${BASH_REMATCH[1]}"
+      block_content=""
+      continue
     fi
-  done
+
+    # Check for closing tag
+    if [[ $line =~ \{\{/IF_HOSTNAME_[^}]+\}\} ]]; then
+      if [ "$in_block" = true ]; then
+        # If hostname matches, keep the block content
+        if [ "$HOSTNAME" = "$block_condition" ]; then
+          result+="$block_content"
+        fi
+        in_block=false
+        block_condition=""
+        block_content=""
+      fi
+      continue
+    fi
+
+    # Regular line processing
+    if [ "$in_block" = true ]; then
+      block_content+="$line"$'\n'
+    else
+      result+="$line"$'\n'
+    fi
+  done <<< "$content"
+
+  content="$result"
 
   # Replace all {{VAR}} with values from remaining arguments
   while [ $# -gt 0 ]; do
@@ -56,7 +81,7 @@ render_template() {
     shift 2
   done
 
-  printf '%s\n' "$content" > "$output_file"
+  printf '%s' "$content" > "$output_file"
 }
 
 # Render wakatime config

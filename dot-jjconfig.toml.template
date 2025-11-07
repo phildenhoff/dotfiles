@@ -3,7 +3,13 @@
 
 [user]
 name = "Phil Denhoff"
+{{#IF_HOSTNAME_press}}
+email = "phil@digits.com"
+{{/IF_HOSTNAME_press}}
+
+{{#IF_HOSTNAME_carafe}}
 email = "phil@denhoff.ca"
+{{/IF_HOSTNAME_carafe}}
 
 [ui]
 diff-formatter = ["difft", "--color=always", "$left", "$right"]
